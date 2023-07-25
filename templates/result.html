@@ -18,7 +18,10 @@
             <!-- Use a pre tag to display the matrix -->
             <pre id="rna-matrix-container"></pre>
             <p>Dot bracket notation: {{ db_notation }}</p>
-            <img src="{{ url_for('static', filename='images/'+gen_rna) }}" alt="RNA Folding Image">
+            <a href="{{ url_for('static', filename='images/'+gen_rna) }}">
+                <img src="{{ url_for('static', filename='images/'+gen_rna) }}" alt="RNA Folding Image">
+              </a>              
+            <!-- <img src="{{ url_for('static', filename='images/'+gen_rna) }}" alt="RNA Folding Image"> -->
         </div>
     </div>
 
