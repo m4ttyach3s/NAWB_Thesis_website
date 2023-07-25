@@ -1,0 +1,45 @@
+legend.numpoints     : 1      # the number of points in the legend line
+legend.scatterpoints : 1
+figure.figsize: 12.8, 8.8
+axes.labelsize: 20
+axes.titlesize: 24
+xtick.labelsize: 20
+ytick.labelsize: 20
+legend.fontsize: 20
+
+grid.linewidth: 1.6
+lines.linewidth: 2.8
+patch.linewidth: 0.48
+lines.markersize: 11.2
+lines.markeredgewidth: 0
+
+xtick.major.width: 1.6
+ytick.major.width: 1.6
+xtick.minor.width: 0.8
+ytick.minor.width: 0.8
+
+xtick.major.pad: 11.2
+ytick.major.pad: 11.2
+
+savefig.transparent : True
+savefig.dpi: 300
+figure.autolayout : True
+
+# IMAGES
+image.cmap: viridis
+image.interpolation  : none       ## see help(imshow) for options  Default: nearest
+
+# SAVING / saving
+# savefig.dpi: 600
+
+# LATEX / LaTeX / latex
+text.usetex : True
+font.family : serif
+font.size : 40  # 20 was a duplicate definition
+# mathtext.fontset = 'custom'
+# mathtext.rm = 'Bitstream Vera Sans'
+# mathtext.it = 'Bitstream Vera Sans:italic'
+# mathtext.bf = 'Bitstream Vera Sans:bold'
+# mathtext.fontset = 'stix'
+# font.family = 'STIXGeneral'
+

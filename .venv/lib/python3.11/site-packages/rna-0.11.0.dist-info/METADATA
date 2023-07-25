@@ -1,0 +1,108 @@
+Metadata-Version: 2.1
+Name: rna
+Version: 0.11.0
+Summary: Basic and essential code building blocks of all pythons
+Home-page: https://gitlab.mpcdf.mpg.de/dboe/rna
+License: MIT
+Keywords: plotting, matplotlib, pyqtgraph, backend, logging, path, argparse
+Author: Daniel Böckenhoff
+Author-email: dboe@ipp.mpg.de
+Requires-Python: >=3.8,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Provides-Extra: config
+Provides-Extra: pyqtgraph
+Requires-Dist: hydra_core ; extra == "config"
+Requires-Dist: matplotlib
+Requires-Dist: numpy (>=1.22)
+Requires-Dist: omegaconf ; extra == "config"
+Requires-Dist: pathlib ; python_version < "3.10"
+Requires-Dist: pyopengl ; extra == "pyqtgraph"
+Requires-Dist: pyqt5 ; extra == "pyqtgraph"
+Requires-Dist: pyqtgraph ; extra == "pyqtgraph"
+Project-URL: Documentation, https://dboe.pages.mpcdf.de/rna
+Project-URL: Repository, https://gitlab.mpcdf.mpg.de/dboe/rna
+Description-Content-Type: text/x-rst
+
+library documentation
+=====================
+
+..
+    [shields-start]
+
+.. pypi
+.. image:: https://img.shields.io/pypi/v/rna.svg
+    :target: https://pypi.python.org/pypi/rna
+.. ci
+.. image:: https://gitlab.mpcdf.mpg.de/dboe/rna/badges/master/pipeline.svg
+    :target: https://gitlab.mpcdf.mpg.de/dboe/rna/-/pipelines/latest
+
+.. latest release
+.. image:: https://gitlab.mpcdf.mpg.de/dboe/rna/-/badges/release.svg
+    :target: https://gitlab.mpcdf.mpg.de/dboe/rna/-/releases
+
+.. coverage
+.. image:: https://gitlab.mpcdf.mpg.de/dboe/rna/badges/master/coverage.svg
+    :target: https://gitlab.mpcdf.mpg.de/dboe/rna/commits/master
+
+.. docs
+.. image:: https://img.shields.io/website-up-down-green-red/https/dboe.pages.mpcdf.de/rna.svg?label=docs
+    :target: https://dboe.pages.mpcdf.de/rna
+
+.. pre-commit
+.. image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+   :target: https://github.com/pre-commit/pre-commit
+   :alt: pre-commit
+
+..
+    [shields-end]
+
+Overview
+--------
+
+..
+    [overview-start]
+
+Basic and essential code building blocks of all pythons
+
+..
+    [overview-end]
+
+Licensed under the ``MIT License``
+
+Resources
+~~~~~~~~~
+
+..
+    [resources-start]
+
+* Source code: https://gitlab.mpcdf.mpg.de/dboe/rna
+* Documentation: https://dboe.pages.mpcdf.de/rna
+* Pypi: https://pypi.python.org/pypi/rna
+
+..
+    [resources-end]
+
+
+Features
+~~~~~~~~
+
+..
+    [features-start]
+
+The following features should be highlighted:
+
+* TODO
+
+..
+    [features-end]
+

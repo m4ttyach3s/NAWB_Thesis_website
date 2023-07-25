@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+{% block body %}
+    <h1>Nussinov's Algorithm WebTool - Result</h1>
+    <p></p>
+    <div class="content">
+        <div class="form">
+            <p>Minimal Loop Length: {{ mll_value }}</p>
+            <p>RNA String: {{ content_value }}</p>
+
+            <!-- Use a pre tag to display the matrix -->
+            <pre id="rna-matrix-container"></pre>
+            <p>Dot bracket notation: {{ db_notation }}</p>
+            <img src="{{ url_for('static', filename='images/'+gen_rna) }}" alt="RNA Folding Image">
+        </div>
+    </div>
+
+    <script>
+        var rnaMatrixJson = "{{ rnaMatrix_json|e }}";
+        var rnaMatrix = JSON.parse(rnaMatrixJson);
+        var rnaMatrixFormatted = rnaMatrix.map(row => row.join('\t')).join('\n');
+        document.getElementById('rna-matrix-container').textContent = "NUSSINOV SCORE MATRIX:\n" + rnaMatrixFormatted;
+    </script>
+{% endblock %}
