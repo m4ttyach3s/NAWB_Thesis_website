@@ -13,15 +13,19 @@
                 <input type="button" id="indietro-button" value="Homepage">
             </a>
             <p>Minimal Loop Length: {{ mll_value }}</p>
-            <p>RNA String: {{ content_value }}</p>
-
-            <!-- Use a pre tag to display the matrix -->
+            <div class="input-string-container">
+                <p class="rna-input">RNA String: {{ content_value }}</p>
+            </div>
+            <p>Number of bonds found: {{ len_bonds }}</p>
+            <p>Nussinov Score Matrix:</p>
             <pre id="rna-matrix-container"></pre>
-            <p>Dot bracket notation: {{ db_notation }}</p>
+            <div class="notation-container">
+                <p class="db-notation">Dot bracket notation: {{ db_notation }}</p>
+            </div>
+            <br><p>Predicted RNA folding</p>
             <a href="{{ url_for('static', filename='images/'+gen_rna) }}">
                 <img src="{{ url_for('static', filename='images/'+gen_rna) }}" alt="RNA Folding Image">
               </a>              
-            <!-- <img src="{{ url_for('static', filename='images/'+gen_rna) }}" alt="RNA Folding Image"> -->
         </div>
     </div>
 
@@ -29,6 +33,7 @@
         var rnaMatrixJson = "{{ rnaMatrix_json|e }}";
         var rnaMatrix = JSON.parse(rnaMatrixJson);
         var rnaMatrixFormatted = rnaMatrix.map(row => row.join('\t')).join('\n');
-        document.getElementById('rna-matrix-container').textContent = "NUSSINOV SCORE MATRIX:\n" + rnaMatrixFormatted;
+        //document.getElementById('rna-matrix-container').textContent = "NUSSINOV SCORE MATRIX:\n" + rnaMatrixFormatted;
+        document.getElementById('rna-matrix-container').textContent = "" + rnaMatrixFormatted;
     </script>
 {% endblock %}

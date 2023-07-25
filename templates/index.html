@@ -30,12 +30,8 @@
             </form>
         </div>
         <script>
-            // Get the error message from the template variable
             var errorMessage = "{{ error_message|e }}";
-    
-            // Check if errorMessage is not empty and not 'None'
             if (errorMessage && errorMessage !== 'None') {
-                // Show an alert with the error message
                 alert(errorMessage);
             }
         </script>

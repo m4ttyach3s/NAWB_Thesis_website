@@ -14,9 +14,9 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         mll_value = request.form['mll']  # Get the minimal-loop value from the form submission
-        content_value = request.form['content']
+        content_value = request.form['content'].upper()
         try:
-            rnaMatrix, db_notation, gen_rna = NussinovAlgorithm(content_value, mll_value)
+            rnaMatrix, db_notation, gen_rna, len_bonds = NussinovAlgorithm(content_value, mll_value)
         except ValueError as e:
             error_message = str(e)
             return render_template('index.html', error_message=error_message)
@@ -26,7 +26,7 @@ def index():
         rnaMatrix_json = json.dumps(rnaMatrix)
         global bonds
         bonds = []
-        return render_template('result.html', mll_value=mll_value, content_value=content_value, rnaMatrix_json=rnaMatrix_json, db_notation=db_notation, gen_rna=gen_rna)
+        return render_template('result.html', mll_value=mll_value, content_value=content_value, rnaMatrix_json=rnaMatrix_json, db_notation=db_notation, gen_rna=gen_rna, len_bonds=len_bonds)
     else:
         return render_template('index.html')
     #return render_template('index.html')
@@ -46,7 +46,7 @@ def NussinovAlgorithm(s, L):
     bonds.sort()
     db_notation = print_dotbracket(s)
     gen_rna = foldRNA(s, db_notation)
-    return rnaMatrix, db_notation, gen_rna
+    return rnaMatrix, db_notation, gen_rna, len(bonds)
     #print(f"\nThere are {len(bonds)} bonds. They are formed in these positions: {bonds}")
     #db_notation = print_dotbracket(s)
     #foldRNA(s, db_notation)
