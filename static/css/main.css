@@ -48,8 +48,9 @@ input[type="submit"]{
 }
 
 button{
-    height: 45px;
+    height: 55px;
     width: 150px;
+    font-size: 20px;
 }
 
 content{

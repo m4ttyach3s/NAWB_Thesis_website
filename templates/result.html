@@ -9,6 +9,9 @@
     <p></p>
     <div class="content">
         <div class="form">
+            <a href="{{ url_for('index') }}">
+                <input type="button" id="indietro-button" value="Homepage">
+            </a>
             <p>Minimal Loop Length: {{ mll_value }}</p>
             <p>RNA String: {{ content_value }}</p>
 
