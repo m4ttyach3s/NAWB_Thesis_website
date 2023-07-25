@@ -6,4 +6,4 @@ packaging
 pandas
 pyparsing
 python-dateutil
-rna==0.11.0
+RNA
