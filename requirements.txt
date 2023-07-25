@@ -3,7 +3,7 @@ Flask
 gunicorn
 Jinja2
 packaging
-pandas==2.0.3
-pyparsing==3.0.9
-python-dateutil==2.8.2
+pandas
+pyparsing
+python-dateutil
 rna==0.11.0
