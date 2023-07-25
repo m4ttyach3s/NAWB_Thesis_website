@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<svg xmlns="http://www.w3.org/2000/svg" height="452" width="452">
+  <script type="text/ecmascript">
+    <![CDATA[
+      var shown = 1;
+      function click() {
+        var seq = document.getElementById("seq");
+        if (shown==1) {
+          seq.setAttribute("style", "visibility: hidden");
+          shown = 0;
+        } else {
+          seq.setAttribute("style", "visibility: visible");
+          shown = 1;
+        }
+      }
+    ]]>
+  </script>
+  <style type="text/css">
+    <![CDATA[
+      .nucleotide {
+        font-family: SansSerif;
+      }
+      .backbone {
+        stroke: grey;
+        fill:   none;
+        stroke-width: 1.5;
+      }
+      .basepairs {
+        stroke: red;
+        fill:   none;
+        stroke-width: 2.5;
+      }
+    ]]>
+  </style>
+
+  <rect style="stroke: white; fill: white" height="452" x="0" y="0" width="452" onclick="click(evt)" />
+  <g transform="scale(6.363160,6.363160) translate(-64.483055,-28.966112)">
+    <polyline class="backbone" id="outline" points="
+      92.500,36.466
+      92.500,51.466
+      92.500,66.466
+      86.454,82.305
+      100.000,92.500
+      113.546,82.305
+      107.500,66.466
+      107.500,51.466
+      107.500,36.466
+    " />
+    <g id="pairs">
+      <line class="basepairs" id="1,9" x1="92.50000" y1="36.46611" x2="107.50000" y2="36.46611" />
+      <line class="basepairs" id="2,8" x1="92.50000" y1="51.46611" x2="107.50000" y2="51.46611" />
+      <line class="basepairs" id="3,7" x1="92.50000" y1="66.46611" x2="107.50000" y2="66.46611" />
+    </g>
+    <g transform="translate(-4.6, 4)" id="seq">
+      <text class="nucleotide" x="92.500" y="36.466">G</text>
+      <text class="nucleotide" x="92.500" y="51.466">G</text>
+      <text class="nucleotide" x="92.500" y="66.466">G</text>
+      <text class="nucleotide" x="86.454" y="82.305">A</text>
+      <text class="nucleotide" x="100.000" y="92.500">A</text>
+      <text class="nucleotide" x="113.546" y="82.305">A</text>
+      <text class="nucleotide" x="107.500" y="66.466">U</text>
+      <text class="nucleotide" x="107.500" y="51.466">C</text>
+      <text class="nucleotide" x="107.500" y="36.466">C</text>
+    </g>
+  </g>
+</svg>
