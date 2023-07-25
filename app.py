@@ -3,7 +3,6 @@ import pandas as pd
 import json
 import RNA
 import datetime
-import os
 
 allowedBases = ['AU', 'UA', 'CG', 'GC', 'GU', 'UG']
 nucleotides = ['A', 'C', 'U', 'G']
