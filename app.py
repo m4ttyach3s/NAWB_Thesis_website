@@ -4,6 +4,10 @@ import json
 import RNA
 import datetime
 
+# export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.10/site-packages/. I use a script for the local run
+# online hasn't created any issues.
+# riportare la stessa stringa inserita in caso di errore --> passare content_value
+
 allowedBases = ['AU', 'UA', 'CG', 'GC', 'GU', 'UG']
 nucleotides = ['A', 'C', 'U', 'G']
 bonds = []
@@ -18,13 +22,12 @@ def index():
         try:
             rnaMatrix, db_notation, gen_rna, len_bonds = NussinovAlgorithm(content_value, mll_value)
         except ValueError as e:
-            error_message = str(e)
-            return render_template('index.html', error_message=error_message)
+            return render_template('index.html', error_message=str(e), content_value=content_value, mll_value=mll_value)
             # If an error is raised, store the error message
         
         print(gen_rna)
         rnaMatrix_json = json.dumps(rnaMatrix)
-        global bonds
+        global bonds # i have to use global otherwise it doesnt see the stored bonds and keeps overwriting them.
         bonds = []
         return render_template('result.html', mll_value=mll_value, content_value=content_value, rnaMatrix_json=rnaMatrix_json, db_notation=db_notation, gen_rna=gen_rna, len_bonds=len_bonds)
     else:
@@ -39,7 +42,8 @@ def NussinovAlgorithm(s, L):
     Returns:
         None: None.
     """
-    s = stringCheck(s)
+    s = stringCheck(s, L)
+    #### INSERIRE controllo del scelta mll
     rnaMatrix = matinit(s)
     nussinovScore(s, L, rnaMatrix)
     traceback(rnaMatrix, 0, len(s)-1, s)
@@ -47,12 +51,8 @@ def NussinovAlgorithm(s, L):
     db_notation = print_dotbracket(s)
     gen_rna = foldRNA(s, db_notation)
     return rnaMatrix, db_notation, gen_rna, len(bonds)
-    #print(f"\nThere are {len(bonds)} bonds. They are formed in these positions: {bonds}")
-    #db_notation = print_dotbracket(s)
-    #foldRNA(s, db_notation)
     
-def stringCheck(s): # tested
-    
+def stringCheck(s, L):
     """Checks if the RNA string is a permitted sequence of characters (A, C, G, U) of length greater than 5.
 
     Args:
@@ -75,6 +75,9 @@ def stringCheck(s): # tested
     if not all(base in nucleotides for base in s):
         raise ValueError(f"The input {s} has some characters that are not allowed. Please, only use characters such as A, C, U, G.")
     
+    if not (L.isdigit() and 0 <= int(L) <= 5):
+        raise ValueError("The minimal loop length must be a number from 0 to 5.")
+
     return s
 
 def matinit(s):

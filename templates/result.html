@@ -1,39 +1,66 @@
 {% extends 'base.html' %}
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results</title>
 </head>
 {% block body %}
-    <h1>Nussinov's Algorithm WebTool - Result</h1>
-    <p></p>
-    <div class="content">
-        <div class="form">
-            <a href="{{ url_for('index') }}">
-                <input type="button" id="indietro-button" value="Homepage">
-            </a>
-            <p>Minimal Loop Length: {{ mll_value }}</p>
-            <div class="input-string-container">
-                <p class="rna-input">RNA String: {{ content_value }}</p>
-            </div>
-            <p>Number of bonds found: {{ len_bonds }}</p>
-            <p>Nussinov Score Matrix:</p>
-            <pre id="rna-matrix-container"></pre>
-            <div class="notation-container">
-                <p class="db-notation">Dot bracket notation: {{ db_notation }}</p>
-            </div>
-            <br><p>Predicted RNA folding</p>
-            <a href="{{ url_for('static', filename='images/'+gen_rna) }}">
-                <img src="{{ url_for('static', filename='images/'+gen_rna) }}" alt="RNA Folding Image">
-              </a>              
-        </div>
+<div class="p-5 text-center bg-transparent">
+  <h1 class="display-5">Nussinov's Algorithm WebTool - Result</h1>
+  <p></p>
+  <div class="content">
+    <div class="form">
+      <a href="{{ url_for('index') }}">
+        <input
+          type="button"
+          class="btn btn-outline-primary"
+          id="indietro-button"
+          value="Homepage"
+        />
+      </a>
+      <br>
+      <table class="table table-striped-columns">
+        <tbody>
+          <tr>
+            <td> <p>Minimal Loop Length:</p></td>
+              <td><p>{{ mll_value }}</p></td>
+          </tr>
+          <tr>
+              <td><div class="input-string-container">
+                <p class="rna-input">RNA String:</td></p>
+                <td><p>{{ content_value }}</p>
+              </div></td>
+            </tr>
+            <tr>
+              <td><p>Number of bonds found:</p></td>
+              <td><p>{{ len_bonds }}</p></td>
+            </tr>
+        </tbody>
+      </table>
+      <p>Nussinov Score Matrix:</p>
+      <pre id="rna-matrix-container"></pre>
+      <div class="notation-container">
+        <p class="db-notation">Dot bracket notation: {{ db_notation }}</p>
+      </div>
+      <br />
+      <p>Predicted RNA folding</p>
+      <a href="{{ url_for('static', filename='images/'+gen_rna) }}">
+        <img
+          src="{{ url_for('static', filename='images/'+gen_rna) }}"
+          class="rounded"
+          alt="RNA Folding Image"
+        />
+      </a>
     </div>
+  </div>
 
-    <script>
-        var rnaMatrixJson = "{{ rnaMatrix_json|e }}";
-        var rnaMatrix = JSON.parse(rnaMatrixJson);
-        var rnaMatrixFormatted = rnaMatrix.map(row => row.join('\t')).join('\n');
-        //document.getElementById('rna-matrix-container').textContent = "NUSSINOV SCORE MATRIX:\n" + rnaMatrixFormatted;
-        document.getElementById('rna-matrix-container').textContent = "" + rnaMatrixFormatted;
-    </script>
-{% endblock %}
+  <script>
+    var rnaMatrixJson = "{{ rnaMatrix_json|e }}";
+    var rnaMatrix = JSON.parse(rnaMatrixJson);
+    var rnaMatrixFormatted = rnaMatrix.map((row) => row.join("\t")).join("\n");
+    //document.getElementById('rna-matrix-container').textContent = "NUSSINOV SCORE MATRIX:\n" + rnaMatrixFormatted;
+    document.getElementById("rna-matrix-container").textContent =
+      "" + rnaMatrixFormatted;
+  </script>
+  {% endblock %}
+</div>

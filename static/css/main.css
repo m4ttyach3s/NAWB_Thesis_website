@@ -71,7 +71,7 @@ p{
     align-items: center;
     margin: 0 auto;
     overflow: auto;
-    border: 2px solid #000000;
+    border: 2px solid #0c6efd;
     padding: 10px;
     margin-bottom: 10px;
     padding-left: 10px;
@@ -84,7 +84,7 @@ p{
     margin: 0 auto;
     text-align: center;
     overflow: auto;
-    border: 2px solid #000000;
+    border: 2px solid #0c6efd;
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -102,4 +102,28 @@ p{
 .input-string-container p {
     word-wrap: break-word;
     white-space: normal;
+}
+
+.center-align{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-align .custom-width {
+    width: 360px;
+}
+
+.table-striped-columns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-striped-columns tbody tr td,
+.table-striped-columns tbody tr td p {
+    background-color: transparent; /* Set the background color for the entire content in cells */
+    text-align: center;
+    width: 600px;
+    word-wrap: break-word;
 }

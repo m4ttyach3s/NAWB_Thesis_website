@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<svg xmlns="http://www.w3.org/2000/svg" height="452" width="452">
+  <script type="text/ecmascript">
+    <![CDATA[
+      var shown = 1;
+      function click() {
+        var seq = document.getElementById("seq");
+        if (shown==1) {
+          seq.setAttribute("style", "visibility: hidden");
+          shown = 0;
+        } else {
+          seq.setAttribute("style", "visibility: visible");
+          shown = 1;
+        }
+      }
+    ]]>
+  </script>
+  <style type="text/css">
+    <![CDATA[
+      .nucleotide {
+        font-family: SansSerif;
+      }
+      .backbone {
+        stroke: grey;
+        fill:   none;
+        stroke-width: 1.5;
+      }
+      .basepairs {
+        stroke: red;
+        fill:   none;
+        stroke-width: 2.5;
+      }
+    ]]>
+  </style>
+
+  <rect style="stroke: white; fill: white" height="452" x="0" y="0" width="452" onclick="click(evt)" />
+  <g transform="scale(3.637608,3.637608) translate(-37.871265,24.257469)">
+    <polyline class="backbone" id="outline" points="
+      92.500,-16.757
+      92.500,-1.757
+      92.500,13.243
+      92.500,28.243
+      92.500,43.243
+      92.500,58.243
+      92.500,73.243
+      90.309,92.500
+      109.691,92.500
+      107.500,73.243
+      107.500,58.243
+      107.500,43.243
+      107.500,28.243
+      107.500,13.243
+      107.500,-1.757
+      107.500,-16.757
+    " />
+    <g id="pairs">
+      <line class="basepairs" id="1,16" x1="92.50000" y1="-16.75747" x2="107.50000" y2="-16.75747" />
+      <line class="basepairs" id="2,15" x1="92.50000" y1="-1.75747" x2="107.50000" y2="-1.75747" />
+      <line class="basepairs" id="3,14" x1="92.50000" y1="13.24253" x2="107.50000" y2="13.24253" />
+      <line class="basepairs" id="4,13" x1="92.50000" y1="28.24253" x2="107.50000" y2="28.24253" />
+      <line class="basepairs" id="5,12" x1="92.50000" y1="43.24253" x2="107.50000" y2="43.24253" />
+      <line class="basepairs" id="6,11" x1="92.50000" y1="58.24253" x2="107.50000" y2="58.24253" />
+      <line class="basepairs" id="7,10" x1="92.50000" y1="73.24253" x2="107.50000" y2="73.24253" />
+    </g>
+    <g transform="translate(-4.6, 4)" id="seq">
+      <text class="nucleotide" x="92.500" y="-16.757">A</text>
+      <text class="nucleotide" x="92.500" y="-1.757">C</text>
+      <text class="nucleotide" x="92.500" y="13.243">G</text>
+      <text class="nucleotide" x="92.500" y="28.243">U</text>
+      <text class="nucleotide" x="92.500" y="43.243">A</text>
+      <text class="nucleotide" x="92.500" y="58.243">C</text>
+      <text class="nucleotide" x="92.500" y="73.243">G</text>
+      <text class="nucleotide" x="90.309" y="92.500">U</text>
+      <text class="nucleotide" x="109.691" y="92.500">A</text>
+      <text class="nucleotide" x="107.500" y="73.243">C</text>
+      <text class="nucleotide" x="107.500" y="58.243">G</text>
+      <text class="nucleotide" x="107.500" y="43.243">U</text>
+      <text class="nucleotide" x="107.500" y="28.243">A</text>
+      <text class="nucleotide" x="107.500" y="13.243">C</text>
+      <text class="nucleotide" x="107.500" y="-1.757">G</text>
+      <text class="nucleotide" x="107.500" y="-16.757">U</text>
+    </g>
+  </g>
+</svg>
